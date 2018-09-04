@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
- const prefix = "2";
+ const prefix = "M";
 client.on('ready', () => {
     console.log('I am ready!');
 });
@@ -9,7 +9,7 @@ client.on('ready', () => {
 
 
 client.on('ready', () => {
-     client.user.setActivity("2music",{type: 'LISTENING'});
+     client.user.setActivity("DJ MYSTRO BOT / Mmusic",{type: 'LISTENING'});
 });
 
 
