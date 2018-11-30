@@ -14,6 +14,12 @@ client.user.setGame(`Royal Force / 3play`);
 });
 
 
+client.on('ready',async () => {
+  client.channels.find(ch => ch.id === "518121213944397825" && ch.type === 'voice').join();
+});
+
+
+
 
 
 
