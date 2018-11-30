@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
- const prefix = "M";
+const adminprefix = "3";
+const prefix = "3";
 client.on('ready', () => {
     console.log('I am ready!');
 });
@@ -8,9 +9,53 @@ client.on('ready', () => {
 
 
 
-client.on('ready', () => {
-     client.user.setActivity("DJ MYSTRO BOT / Mmusic",{type: 'LISTENING'});
+client.on('ready', () => {                           
+client.user.setGame(`Royal Force / 3play`);                                                                                                                                                                                                                                                                                                                                                                                                                            
 });
+
+
+
+
+
+const developers = ["408005403381858304","513666662004686848"]
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
+      
+  if (message.content.startsWith(adminprefix + 'sp')) {
+    client.user.setGame(argresult);
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+     if (message.content === (adminprefix + "leave")) {
+    message.guild.leave();        
+  } else
+  if (message.content.startsWith(adminprefix + 'st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/fofodiscord");
+      message.channel.send(`**✅**`)
+  }
+  if (message.content.startsWith(adminprefix + 'setname')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`Changing The Name To ..**${argresult}** `)
+} else
+if (message.content.startsWith(adminprefix + 'setavatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`Changing The Avatar To :**${argresult}** `);
+}
+});
+
+var KinG66S = {};
+client.on('guildMemberRemove', member => {
+KinG66S[member.id] = {roles: member.roles.array()};
+});
+
+client.on('guildMemberAdd', member => {
+if(!KinG66S[member.user.id]) return;
+console.log(KinG66S[member.user.id].roles.length);
+for(let i = 0; i < KinG66S[member.user.id].roles.length + 1; i++) {
+member.addRole(KinG66S[member.user.id].roles.shift());
+}
+});
+
 
 
 
@@ -38,7 +83,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[Codes] ${client.users.size}`)
-    client.user.setStatus("idle")
+    client.user.setStatus("online")
 });
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 client.on('message', async msg => { // eslint-disable-line
@@ -91,7 +136,7 @@ client.on('message', async msg => { // eslint-disable-line
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-					.setFooter("BomBot")
+					.setFooter("Royal Force©")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 
 					// eslint-disable-next-line max-depth
