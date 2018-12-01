@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 
 
-
+//stop
 client.on('ready', () => {                           
 client.user.setGame(`Royal Force / 3play`);                                                                                                                                                                                                                                                                                                                                                                                                                            
 });
