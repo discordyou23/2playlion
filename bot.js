@@ -19,7 +19,10 @@ client.on('ready',async () => {
 });
 
 
-
+client.on('message', msg => {
+  if(msg.content === '3stop')
+  msg.reply('**تم إيقاف الأغنية|✅**')
+});
 
 
 
