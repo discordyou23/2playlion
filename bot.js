@@ -74,7 +74,7 @@ client.on('guildMemberAdd', member => {
 
     
 
-const w = ['./welcome.png'];
+const w = ['./welcome.jpg'];
 
          let Image = Canvas.Image,
 
@@ -98,7 +98,7 @@ const w = ['./welcome.png'];
 
           
 
-                let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(100) + ".png" : member.user.displayAvatarURL;
+                let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(100) + ".jpg" : member.user.displayAvatarURL;
 
                 jimp.read(url, (err, ava) => {
 
