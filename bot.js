@@ -1,5 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const convert = require("hh-mm-ss")
+const dateFormat = require('dateformat');
+const fs = require('fs');
+const pretty = require('pretty-ms');
+const rn = require('random-number');
+const moment = require('moment');
+var Canvas = require('canvas')
+var jimp = require('jimp')
+
 
 client.on('ready', () => {
     console.log('I am ready!');
